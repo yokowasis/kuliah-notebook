@@ -1,0 +1,131 @@
+\documentclass{uofa-eng-assignment}
+
+\usepackage{lipsum}
+\usepackage{dirtytalk} %quote
+\usepackage{xcolor}
+
+% Package For Circle
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\newcommand{\mymk}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+    text height=2mm](char){\ensuremath{#1}} ;}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+% Package for circle
+        
+\newcommand*{\name}{Wasis Haryo Sasoko}
+\newcommand*{\id}{B0220068}
+\newcommand*{\course}{Logika Informatika}
+\newcommand*{\assignment}{Inferensi Logika}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+    %%%%%%%%%%%%%%%%%%%%
+    \item Perlihatkan bahwa argumen berikut:
+
+          \say{Jika air laut surut setelah gempa di laut, maka tsunami datang. Air laut surut setelah gempa dilaut. Karena itu tsunami datang.}
+
+          adalah sahih\\\\
+          %%%%%%%%%%%%%%%%%%%%
+          \textbf{Jawab :}\\\\
+          $p$ : Air laut surut setelah gempa di laut \\
+          $q$ : Tsunami Datang \\
+
+
+          $P_1$ : $p\xrightarrow{}q$ \\
+          $P_2$ : p \\
+          $K$ : q \\
+
+          \begin{center}
+              \begin{tabular}{c|c|c|c|c}
+                  p & q & (p$\xrightarrow{}$q) & p           & q           \\
+                  \hline
+                  T & T & \circled{T}          & \circled{T} & \circled{T} \\
+                  \hline
+                  T & F & F                    & T           & F           \\
+                  \hline
+                  F & T & T                    & F           & T           \\
+                  \hline
+                  F & F & T                    & F           & F           \\
+              \end{tabular}
+
+
+              $\therefore$ Argumen adalah \textbf{Benar}
+          \end{center}
+
+
+          %%%%%%%%%%%%%%%%%%%%
+    \item Perlihatkan bahwa penalaran pada argumen berikut: \\
+          \say{Jika air laut surut setelah gempa di laut, maka tsunami datang. Tsunami datang. Jadi,
+              air laut surut setelah gempa di laut} \\
+          tidak benar, dengan kata lain argumennya palsu \\\\
+          %%%%%%%%%%%%%%%%%%%%
+          \textbf{Jawab :}\\\\
+          $p$ : Air laut surut setelah gempa di laut \\
+          $q$ : Tsunami Datang \\
+          \\
+          $P_1$ : $p\xrightarrow{}q$\\
+          $P_2$ : $q$\\
+          $K$ : $p$
+
+          \begin{center}
+              \begin{tabular}{c|c|c|c|c}
+                  p & q & (p$\xrightarrow{}$q) & q           & p                            \\
+                  \hline
+                  T & T & \circled{T}          & \circled{T} & \circled{T}                  \\
+                  \hline
+                  T & F & F                    & F           & T                            \\
+                  \hline
+                  F & T & \circled{T}          & \circled{T} & \textcolor{red}{\circled{F}} \\
+                  \hline
+                  F & F & T                    & F           & F                            \\
+              \end{tabular}
+
+
+              $\therefore$ Argumen adalah \textbf{Salah}, karena tidak semua baris kritis bernilai Benar.
+          \end{center}
+
+          %%%%%%%%%%%%%%%%%%%%
+    \item Periksa kesahihan argumen berikut ini:\\\\
+          \begin{tabular}{l}
+              Jika 5 lebih kecil dari 4, maka 5 bukan bilangan prima. \\
+              5 tidak lebih kecil dari 4.                             \\
+              \hline
+              5 adalah bilangan prima                                 \\
+          \end{tabular}\\\\
+          %%%%%%%%%%%%%%%%%%%%
+          \textbf{Jawab :}\\\\
+          $p$ : 5 lebih kecil dari 4 \\
+          $q$ : 5 bilangan prima \\
+          \\
+          $P_1$ : $p\xrightarrow{}\neg{q}$\\
+          $P_2$ : $\neg{p}$\\
+          $K$ : $q$ \\
+
+          \begin{center}
+              \begin{tabular}{c|c|c|c|c}
+                  p & q & $p\xrightarrow{}\neg{q}$ & $\neg{p}$   & $q$                          \\
+                  \hline
+                  T & T & F                        & F           & T                            \\
+                  \hline
+                  T & F & T                        & F           & F                            \\
+                  \hline
+                  F & T & \circled{T}              & \circled{T} & \circled{T}                  \\
+                  \hline
+                  F & F & \circled{T}              & \circled{T} & \textcolor{red}{\circled{F}} \\
+              \end{tabular}
+
+
+              $\therefore$ Argumen adalah \textbf{Salah}, karena tidak semua baris kritis bernilai Benar.
+          \end{center}
+
+
+\end{enumerate}
+\end{document}

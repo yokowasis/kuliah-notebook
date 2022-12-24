@@ -1,0 +1,101 @@
+\documentclass{uofa-eng-assignment}
+
+\usepackage{lipsum}
+\usepackage{dirtytalk} %quote
+\usepackage{xcolor}
+
+% Package For Circle
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\newcommand{\mymk}[1]{%
+\tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=2pt, minimum size=7mm,
+text height=2mm](char){\ensuremath{#1}} ;}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+% Package for circle
+
+\newcommand*{\name}{Wasis Haryo Sasoko}
+\newcommand*{\id}{B0220068}
+\newcommand*{\course}{Metode Numerik}
+\newcommand*{\assignment}{Persamaan Linear}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+    \item Selesaikan persamaan berikut : \\
+          \begin{equation}
+              x_1 + x_2 + 2x_3 = 4
+          \end{equation}
+          \begin{equation}
+              2x_1 + 4x_2 - x_3 = 3
+          \end{equation}
+          \begin{equation}
+              2x_1 + 3x_2 + x_3 = 10
+          \end{equation}
+          dengan Metode : \\
+          \begin{enumerate}
+              \item Eliminasi Gauss
+              \item Eliminasi Gauss Jordan
+              \item Iterasi
+          \end{enumerate}
+          \textbf{Jawab :}\\\\
+
+          \begin{enumerate}
+              \item Eliminasi Gauss \\
+                    Augmented Matrix \\
+                    \begin{equation}
+                        \begin{bmatrix}
+                            1 & 1 & 2  & 4  \\
+                            2 & 4 & -1 & 3  \\
+                            2 & 3 & 1  & 10
+                        \end{bmatrix}
+                    \end{equation}
+
+                    \begin{enumerate}
+                        \item Eliminasi \\
+                              $B_2 = B_2 - 2B_1$ \\
+                              $B_3 = B_3 - 2B_1$ \\
+                              \begin{equation}
+                                  \begin{bmatrix}
+                                      1 & 1 & 2  & 4  \\
+                                      0 & 2 & -5 & -5 \\
+                                      0 & 1 & -3 & 2
+                                  \end{bmatrix}
+                              \end{equation}
+                        \item Eliminasi \\
+                              $B_3 = 2B_3 - B2$\\
+                              \begin{equation}
+                                  \begin{bmatrix}
+                                      1 & 1 & 2  & 4  \\
+                                      0 & 2 & -5 & -5 \\
+                                      0 & 0 & -1 & 9
+                                  \end{bmatrix}
+                              \end{equation}
+                        \item Substitusi \\
+                              \begin{equation}
+                                  \begin{split}
+                                      x_3 & = -9 \\
+                                      x_2 & = \frac{-5+5(-9)}{2} \\
+                                      & = \frac{-5-45}{2} \\
+                                      & = \frac{-50}{2} \\
+                                      & = -25 \\
+                                      x_1 & = \frac{4-2(x_3)-1(x_2)}{1} \\
+                                      & = 4-2(-9)-1(-25) \\
+                                      & = 4+18+25 \\
+                                      & = 47 \\
+                                  \end{split}
+                              \end{equation}
+                    \end{enumerate}
+
+              \item Elimasi Gauss Jordan \\
+              \item Iterasi \\
+          \end{enumerate}
+
+
+\end{enumerate}
+\end{document}
