@@ -72,7 +72,7 @@
         \assignment
     \end{center}
 
-    \rule{\linewidth}{0.1mm}
+    \rule{16.5cm}{0.1mm}
 
     \bigskip
     \bigskip
